@@ -17,6 +17,6 @@ export class ProductsListComponent implements OnInit {
 
   products: Product[] = [];
   ngOnInit(): void {
-    this.products = this.productService.getAllData();
+    this.products = this.productService.getAllProducts();
   }
 }

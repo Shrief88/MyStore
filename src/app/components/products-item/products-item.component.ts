@@ -6,7 +6,11 @@ import { Product } from "src/app/models/product";
   template: `
     <div class="p-2 border border-cyan-700">
       <div class="flex flex-col gap-2 items-center">
-        <img class="w-72" src="{{ product.url }}" alt="{{ product.name }}" />
+        <img
+          routerLink="products/{{ product.id }}"
+          class="w-72"
+          src="{{ product.url }}"
+          alt="{{ product.name }}" />
         <p>{{ product.name }}</p>
         <p>{{ product.price }}$</p>
         <button class="px-4 py-2 bg-blue-800 text-white rounded-md">

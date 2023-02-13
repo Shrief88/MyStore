@@ -7,6 +7,7 @@ import { HeaderComponent } from "./components/header/header.component";
 import { ProductsListComponent } from "./components/products-list/products-list.component";
 import { CartComponent } from "./components/cart/cart.component";
 import { ProductsItemComponent } from "./components/products-item/products-item.component";
+import { ProductComponent } from "./components/product/product.component";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ProductsItemComponent } from "./components/products-item/products-item.
     ProductsListComponent,
     CartComponent,
     ProductsItemComponent,
+    ProductComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
