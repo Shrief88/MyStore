@@ -8,7 +8,7 @@ import { Component } from "@angular/core";
       <nav class="flex gap-1">
         <a routerLink="/" class="text-white">Product List</a>
         <p class="text-white">|</p>
-        <a routerLink="/cart" class="text-white">Cart</a> 
+        <a routerLink="/cart" class="text-white">Cart</a>
       </nav>
     </div>
   `,

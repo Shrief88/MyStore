@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { Product } from "src/app/models/product";
+import * as data from "../../../../data.json";
 
 @Component({
-  selector: 'app-products-list',
+  selector: "app-products-list",
   template: `
-    <p>
-      products-list works!
-    </p>
+    <div class="flex flex-wrap gap-12 justify-center items-center px-32 py-20">
+      <app-products-item *ngFor="let product of products" [product]="product">
+      </app-products-item>
+    </div>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class ProductsListComponent {
-
+  products: Product[] = (data as any).default;
 }

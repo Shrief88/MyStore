@@ -1,15 +1,8 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-cart',
-  template: `
-    <p>
-      cart works!
-    </p>
-  `,
-  styles: [
-  ]
+  selector: "app-cart",
+  template: ` <p>cart works!</p> `,
+  styles: [],
 })
-export class CartComponent {
-
-}
+export class CartComponent {}
