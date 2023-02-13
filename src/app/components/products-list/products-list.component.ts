@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Product } from "src/app/models/product";
-import * as data from "../../../../data.json";
+import { ProductsService } from "src/app/services/products.service";
 
 @Component({
   selector: "app-products-list",
@@ -12,6 +12,11 @@ import * as data from "../../../../data.json";
   `,
   styles: [],
 })
-export class ProductsListComponent {
-  products: Product[] = (data as any).default;
+export class ProductsListComponent implements OnInit {
+  constructor(private productService: ProductsService) {}
+
+  products: Product[] = [];
+  ngOnInit(): void {
+    this.products = this.productService.getAllData();
+  }
 }
