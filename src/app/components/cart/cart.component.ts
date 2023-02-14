@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Product } from "src/app/models/product";
 import { CartService } from "src/app/services/cart.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-cart",
@@ -69,7 +70,7 @@ export class CartComponent implements OnInit {
   address = "";
   creditCard = "";
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit(): void {
     this.products = this.cartService.getAllProducts();
@@ -77,6 +78,6 @@ export class CartComponent implements OnInit {
   }
 
   onSubmit(): void {
-    alert("Success");
+    this.router.navigate(["/success"]);
   }
 }

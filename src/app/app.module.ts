@@ -11,6 +11,7 @@ import { ProductsItemComponent } from "./components/products-item/products-item.
 import { ProductComponent } from "./components/product/product.component";
 import { AddProductFormComponent } from "./components/add-product-form/add-product-form.component";
 import { ProductCheckoutComponent } from "./components/product-checkout/product-checkout.component";
+import { SuccessComponent } from './components/success/success.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ProductCheckoutComponent } from "./components/product-checkout/product-
     ProductComponent,
     AddProductFormComponent,
     ProductCheckoutComponent,
+    SuccessComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
