@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
 import { Product } from "src/app/models/product";
 import { CartService } from "src/app/services/cart.service";
 
@@ -17,6 +17,11 @@ import { CartService } from "src/app/services/cart.service";
         <p class="font-bold text-xl">{{ product.name }}</p>
         <p class="text-base">{{ product.price }}$</p>
         <p>Amount: {{ qunatity }}</p>
+        <button
+          class="px-4 py-1 bg-blue-800 text-white rounded-md mt-2"
+          (click)="deleted.emit(product.id)">
+          Delete
+        </button>
       </div>
     </div>
   `,
@@ -30,6 +35,8 @@ export class ProductCheckoutComponent implements OnInit {
     price: 0,
     description: "",
   };
+  @Output() deleted = new EventEmitter();
+
   qunatity = 0;
 
   constructor(private cartService: CartService) {}

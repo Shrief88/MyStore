@@ -36,4 +36,12 @@ export class CartService {
     }
     return total;
   }
+
+  reset() {
+    this.orders.clear();
+  }
+
+  deleteProduct(id: number) {
+    this.orders.delete(id);
+  }
 }

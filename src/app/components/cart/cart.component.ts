@@ -11,7 +11,8 @@ import { Router } from "@angular/router";
         <div class="flex flex-col justify-center items-center gap-2">
           <app-product-checkout
             *ngFor="let product of products"
-            [product]="product">
+            [product]="product"
+            (deleted)="deleteProduct(product.id)">
           </app-product-checkout>
           <p *ngIf="total > 0" class="text-xl font-bold">Total: {{ total }}$</p>
         </div>
@@ -77,7 +78,14 @@ export class CartComponent implements OnInit {
     this.total = this.cartService.getTotal();
   }
 
+  deleteProduct(id: number) {
+    this.cartService.deleteProduct(id);
+    this.products = this.cartService.getAllProducts();
+    this.total = this.cartService.getTotal();
+  }
+
   onSubmit(): void {
+    this.cartService.reset();
     this.router.navigate(["/success"]);
   }
 }
