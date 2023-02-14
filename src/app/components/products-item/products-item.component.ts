@@ -4,7 +4,7 @@ import { Product } from "src/app/models/product";
 @Component({
   selector: "app-products-item",
   template: `
-    <div class="p-2 border border-cyan-700">
+    <div class="p-2 border border-cyan-700 pb-3">
       <div class="flex flex-col gap-2 items-center">
         <img
           routerLink="products/{{ product.id }}"
@@ -13,9 +13,7 @@ import { Product } from "src/app/models/product";
           alt="{{ product.name }}" />
         <p>{{ product.name }}</p>
         <p>{{ product.price }}$</p>
-        <button class="px-4 py-2 bg-blue-800 text-white rounded-md">
-          Add to cart
-        </button>
+        <app-add-product-form [id]="product.id"></app-add-product-form>
       </div>
     </div>
   `,

@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -8,6 +9,7 @@ import { ProductsListComponent } from "./components/products-list/products-list.
 import { CartComponent } from "./components/cart/cart.component";
 import { ProductsItemComponent } from "./components/products-item/products-item.component";
 import { ProductComponent } from "./components/product/product.component";
+import { AddProductFormComponent } from "./components/add-product-form/add-product-form.component";
 
 @NgModule({
   declarations: [
@@ -17,8 +19,9 @@ import { ProductComponent } from "./components/product/product.component";
     CartComponent,
     ProductsItemComponent,
     ProductComponent,
+    AddProductFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

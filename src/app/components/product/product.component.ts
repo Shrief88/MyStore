@@ -18,9 +18,7 @@ import { ProductsService } from "src/app/services/products.service";
         <p class="font-bold text-3xl">{{ product.name }}</p>
         <p class="text-lg">{{ product.price }}$</p>
         <p class="text-lg">{{ product.description }}</p>
-        <button class="px-4 py-2 bg-blue-800 text-white rounded-md">
-          Add to cart
-        </button>
+        <app-add-product-form [id]="product.id"></app-add-product-form>
         <a class="underline text-blue-600" routerLink="/"
           >return to product list</a
         >
