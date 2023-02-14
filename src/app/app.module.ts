@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -11,7 +12,7 @@ import { ProductsItemComponent } from "./components/products-item/products-item.
 import { ProductComponent } from "./components/product/product.component";
 import { AddProductFormComponent } from "./components/add-product-form/add-product-form.component";
 import { ProductCheckoutComponent } from "./components/product-checkout/product-checkout.component";
-import { SuccessComponent } from './components/success/success.component';
+import { SuccessComponent } from "./components/success/success.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { SuccessComponent } from './components/success/success.component';
     ProductCheckoutComponent,
     SuccessComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
