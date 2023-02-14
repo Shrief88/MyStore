@@ -10,7 +10,7 @@ import { CartComponent } from "./components/cart/cart.component";
 import { ProductsItemComponent } from "./components/products-item/products-item.component";
 import { ProductComponent } from "./components/product/product.component";
 import { AddProductFormComponent } from "./components/add-product-form/add-product-form.component";
-import { ProductCheckoutComponent } from './components/product-checkout/product-checkout.component';
+import { ProductCheckoutComponent } from "./components/product-checkout/product-checkout.component";
 
 @NgModule({
   declarations: [

@@ -5,7 +5,7 @@ import { CartService } from "src/app/services/cart.service";
 @Component({
   selector: "app-product-checkout",
   template: `
-    <div class="flex p-3 justify-center gap-12">
+    <div class="grid grid-cols-2 gap-4">
       <div class="rounded-sm">
         <img
           class="w-32 rounded-xl"
