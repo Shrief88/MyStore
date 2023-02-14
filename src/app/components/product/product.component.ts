@@ -28,22 +28,19 @@ import { ProductsService } from "src/app/services/products.service";
   styles: [],
 })
 export class ProductComponent implements OnInit {
-  id: string;
-  product: Product;
+  id = "";
+  product: Product = {
+    id: 0,
+    name: "",
+    url: "",
+    price: 0,
+    description: "",
+  };
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductsService
-  ) {
-    this.id = "";
-    this.product = {
-      id: 0,
-      name: "",
-      url: "",
-      price: 0,
-      description: "",
-    };
-  }
+  ) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get("id") as string;

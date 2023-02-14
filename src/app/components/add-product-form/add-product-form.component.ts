@@ -9,7 +9,8 @@ import { CartService } from "src/app/services/cart.service";
         [(ngModel)]="quantity"
         name="quantity"
         type="number"
-        class="border-2 w-24 rounded-md pl-2" />
+        class="border-2 w-24 rounded-md pl-2"
+        min="0" />
       <button class="px-4 py-2 bg-blue-800 text-white rounded-md w-32">
         Add to cart
       </button>

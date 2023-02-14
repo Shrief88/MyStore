@@ -13,13 +13,27 @@ export class CartService {
   addProduct(id: number, quantity: number) {
     const oldQuantity = this.orders.get(id) || 0;
     this.orders.set(id, oldQuantity + quantity);
-    console.log(this.orders);
   }
 
-  getAllOrders() {
+  getAllProducts() {
     const products: Product[] = [];
     for (const id of this.orders.keys()) {
       products.push(this.productService.getProductById(id));
     }
+    return products;
+  }
+
+  getProductQuantity(id: number) {
+    return this.orders.get(id);
+  }
+
+  getTotal() {
+    let total = 0;
+    for (const id of this.orders.keys()) {
+      total +=
+        this.productService.getProductById(id).price *
+        (this.orders.get(id) || 1);
+    }
+    return total;
   }
 }

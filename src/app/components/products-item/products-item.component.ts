@@ -20,15 +20,11 @@ import { Product } from "src/app/models/product";
   styles: [],
 })
 export class ProductsItemComponent {
-  @Input() product: Product;
-
-  constructor() {
-    this.product = {
-      id: 1,
-      name: "",
-      url: "",
-      price: 0,
-      description: "",
-    };
-  }
+  @Input() product: Product = {
+    id: 1,
+    name: "",
+    url: "",
+    price: 0,
+    description: "",
+  };
 }
