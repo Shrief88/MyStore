@@ -44,8 +44,13 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get("id") as string;
-    this.product = this.productService.getProductById(
-      parseInt(this.id)
-    ) as Product;
+    this.productService
+      .getAllProducts()
+      .subscribe(
+        (data) =>
+          (this.product = data.find(
+            (item) => item.id === parseInt(this.id)
+          ) as Product)
+      );
   }
 }

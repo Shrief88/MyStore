@@ -15,24 +15,14 @@ export class CartService {
     this.orders.set(id, oldQuantity + quantity);
   }
 
-  getAllProducts() {
-    const products: Product[] = [];
-    for (const id of this.orders.keys()) {
-      products.push(this.productService.getProductById(id));
-    }
-    return products;
-  }
-
   getProductQuantity(id: number) {
     return this.orders.get(id);
   }
 
-  getTotal() {
+  getTotal(products: Product[]) {
     let total = 0;
-    for (const id of this.orders.keys()) {
-      total +=
-        this.productService.getProductById(id).price *
-        (this.orders.get(id) || 1);
+    for (const product of products) {
+      total += product.price * (this.orders.get(product.id) || 1);
     }
     return total;
   }

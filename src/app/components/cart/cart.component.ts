@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Product } from "src/app/models/product";
 import { CartService } from "src/app/services/cart.service";
 import { Router } from "@angular/router";
+import { ProductsService } from "src/app/services/products.service";
 
 @Component({
   selector: "app-cart",
@@ -102,17 +103,26 @@ export class CartComponent implements OnInit {
   address = "";
   creditCard = "";
 
-  constructor(private cartService: CartService, private router: Router) {}
+  constructor(
+    private cartService: CartService,
+    private router: Router,
+    private productService: ProductsService
+  ) {}
 
   ngOnInit(): void {
-    this.products = this.cartService.getAllProducts();
-    this.total = this.cartService.getTotal();
+    this.productService.getAllProducts().subscribe((data) => {
+      for (const id of this.cartService.orders.keys()) {
+        const product = data.find((item) => item.id === id) as Product;
+        this.products.push(product);
+      }
+      this.total = this.cartService.getTotal(this.products);
+    });
   }
 
   deleteProduct(id: number) {
     this.cartService.deleteProduct(id);
-    this.products = this.cartService.getAllProducts();
-    this.total = this.cartService.getTotal();
+    this.products = this.products.filter((item) => item.id !== id);
+    this.total = this.cartService.getTotal(this.products);
     alert("product has been deleted");
   }
 
