@@ -30,7 +30,17 @@ import { Router } from "@angular/router";
             [(ngModel)]="fullname"
             required
             minlength="3"
-            placeholder="(minimum 3 characters)" />
+            placeholder="(minimum 3 characters)"
+            #userName="ngModel" />
+
+          <div *ngIf="userName.invalid && userName.dirty">
+            <div *ngIf="userName.errors?.['required']">
+              Please provide a fullname.
+            </div>
+            <div *ngIf="userName.errors?.['minlength']">
+              your fullname must contain at least 3 characters.
+            </div>
+          </div>
 
           <label>Address</label>
           <input
@@ -40,7 +50,17 @@ import { Router } from "@angular/router";
             [(ngModel)]="address"
             required
             minlength="6"
-            placeholder="(minimum 6 characters)" />
+            placeholder="(minimum 6 characters)"
+            #userAddress="ngModel" />
+
+          <div *ngIf="userAddress.invalid && userAddress.dirty">
+            <div *ngIf="userAddress.errors?.['required']">
+              Please provide a address.
+            </div>
+            <div *ngIf="userAddress.errors?.['minlength']">
+              your address must contain at least 6 characters.
+            </div>
+          </div>
 
           <label>credit card number</label>
           <input
@@ -50,7 +70,18 @@ import { Router } from "@angular/router";
             [(ngModel)]="creditCard"
             required
             minlength="16"
-            maxlength="16" />
+            maxlength="16"
+            #userCredit="ngModel" />
+
+          <div *ngIf="userCredit.invalid && userCredit.dirty">
+            <div *ngIf="userCredit.errors?.['required']">
+              Please provide a credit card.
+            </div>
+            <div
+              *ngIf="userCredit.errors?.['minlength'] && userCredit.errors?.['maxlength']">
+              your credit must contain 18 digits.
+            </div>
+          </div>
 
           <button
             type="submit"
@@ -82,6 +113,7 @@ export class CartComponent implements OnInit {
     this.cartService.deleteProduct(id);
     this.products = this.cartService.getAllProducts();
     this.total = this.cartService.getTotal();
+    alert("product has been deleted");
   }
 
   onSubmit(): void {
