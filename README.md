@@ -1,7 +1,13 @@
 # MyStore
 This project is part of Udacity Full Stack JavaScript Developer Nanodegree
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+MyStore is a single-page application  built in Angular, that offers a rich, dynamic experience on the web. It presents a list of product which can be added to a cart then chechout. Bellow are all the functionality one can perform: 
+
+- View list of products
+- Add products to cart
+- View products in cart
+- Delete product from cart 
+- Checkout products in cart 
 
 ## Development server
 
