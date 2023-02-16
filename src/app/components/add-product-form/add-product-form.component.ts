@@ -13,7 +13,8 @@ import { CartService } from "src/app/services/cart.service";
         name="quantity"
         type="number"
         class="border-2 w-24 rounded-md pl-2"
-        min="1" />
+        min="1"
+        (keypress)="($event.charCode >= 48 && $event.charCode < 58)" />
       <button
         [disabled]="form.invalid"
         class="px-4 py-2 bg-blue-800 text-white rounded-md w-32 disabled:opacity-50">

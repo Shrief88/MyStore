@@ -72,7 +72,8 @@ import { ProductsService } from "src/app/services/products.service";
             required
             minlength="16"
             maxlength="16"
-            #userCredit="ngModel" />
+            #userCredit="ngModel"
+            (keypress)="($event.charCode >= 48 && $event.charCode < 58)" />
 
           <div *ngIf="userCredit.invalid && userCredit.dirty">
             <div *ngIf="userCredit.errors?.['required']">
@@ -124,6 +125,11 @@ export class CartComponent implements OnInit {
     this.products = this.products.filter((item) => item.id !== id);
     this.total = this.cartService.getTotal(this.products);
     alert("product has been deleted");
+  }
+
+  inputValidator(event: string) {
+    console.log(event);
+    console.log(this.creditCard);
   }
 
   onSubmit(): void {
