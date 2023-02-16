@@ -127,11 +127,6 @@ export class CartComponent implements OnInit {
     alert("product has been deleted");
   }
 
-  inputValidator(event: string) {
-    console.log(event);
-    console.log(this.creditCard);
-  }
-
   onSubmit(): void {
     this.cartService.reset();
     this.router.navigate(["/success"]);
